@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mShowCount = findViewById(R.id.tv_count);
+//        mShowCount = findViewById(R.id.tv_count);
         Log.d(LOG_TAG, "Hello World");
     }
 
