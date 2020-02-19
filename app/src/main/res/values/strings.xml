@@ -23,4 +23,17 @@
         exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
         consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
     </string>
+    <string name="item_description_placeholder">Item Description</string>
+    <string name="donuts">Donuts are glazed and sprinkled with candy.</string>
+    <string name="ice_cream_sandwiches">Ice cream sandwiches have chocolate wafers and vanilla filling.</string>
+    <string name="froyo">FroYo is premium self-serve frozen yogurt.</string>
+
+
+
+    <string-array name="labels_array">
+        <item>Cheese</item>
+        <item>Avocado</item>
+        <item>Jalapeno</item>
+        <item>Beef patty</item>
+    </string-array>
 </resources>
