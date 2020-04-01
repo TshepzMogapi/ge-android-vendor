@@ -16,7 +16,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=
                     "com.example.ge_android_vendor.ItemsActivity" />
-            ></activity>
+            </activity>
         <activity android:name=".ItemsActivity"
             android:exported="true"/>
         <activity

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ge-android-vendor</string>
+    <string name="app_name">GE Vendor</string>
     <string name="add_item_button">Add Item</string>
     <string name="count_text_view">0</string>
     <string name="counting_toast_message">Counting...</string>
