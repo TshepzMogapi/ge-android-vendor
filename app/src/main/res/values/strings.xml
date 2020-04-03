@@ -29,11 +29,13 @@
     <string name="froyo">FroYo is premium self-serve frozen yogurt.</string>
 
 
-
     <string-array name="labels_array">
         <item>Cheese</item>
         <item>Avocado</item>
         <item>Jalapeno</item>
         <item>Beef patty</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
