@@ -22,13 +22,7 @@ public class ItemDetailActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_item_detail);
 
 
-        Intent intent = getIntent();
 
-        String itemName = intent.getStringExtra(ItemsActivity.EXTRA_ITEM);
-
-        TextView textView = findViewById(R.id.tv_item_name);
-
-        textView.setText(itemName);
 
         Spinner spinner =  findViewById(R.id.spn_extra_item_option);
         if (spinner != null) {
