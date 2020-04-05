@@ -10,12 +10,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class ItemsActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private ItemListAdapter mItemListAdapter;
+    private ArrayList<Item> mItemsData;
 
 
     private final LinkedList<String> mItemList = new LinkedList<>();
@@ -35,15 +37,30 @@ public class ItemsActivity extends AppCompatActivity {
 
         mRecyclerView = findViewById(R.id.rv_content_items);
 
-        for (int i = 0; i < 20; i++) {
-            mItemList.addLast("Item " + i);
-        }
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        mItemListAdapter = new ItemListAdapter(this, mItemList);
+        mItemsData = new ArrayList<>();
+
+        mItemListAdapter = new ItemListAdapter(this, mItemsData);
 
         mRecyclerView.setAdapter(mItemListAdapter);
 
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        initializeData();
+    }
+
+    private void initializeData() {
+
+        String[] itemsList = getResources()
+                .getStringArray(R.array.item_titles);
+
+        String[] itemsDescriptions = getResources()
+                .getStringArray(R.array.item_descriptions);
+
+        for (int i = 0; i < itemsList.length; i++) {
+            mItemsData.add(new Item(itemsList[i], itemsDescriptions[i]));
+        }
+
+        mItemListAdapter.notifyDataSetChanged();
 
     }
 

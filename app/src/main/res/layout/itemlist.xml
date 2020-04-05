@@ -4,8 +4,15 @@
     android:layout_height="wrap_content" android:padding="6dp">
 
     <TextView
-        android:id="@+id/tv_item_list"
+        android:id="@+id/vh_item_title"
         style="@style/item_title" />
+
+
+    <TextView
+        android:id="@+id/vh_item_description"
+        style="@style/item_title" />
+
+
 
 
 

@@ -40,6 +40,25 @@
         <item>Beef patty</item>
     </string-array>
 
+
+    <string-array name="item_titles">
+        <item>Beef Burger</item>
+        <item>Chicken Strips</item>
+        <item>Ice Cream</item>
+        <item>Italian Pizza</item>
+        <item>French Stir Fry</item>
+    </string-array>
+
+    <string-array name="item_descriptions">
+        <item>Beef patty, Bread, Tomatoes,Cheese</item>
+        <item>Fried chicken strips</item>
+        <item>Chocolate mixed with vanilla cream</item>
+        <item>Avocado, Ground beef, Tomatoes</item>
+        <item>Onions, Peas, Pepper</item>
+    </string-array>
+
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
