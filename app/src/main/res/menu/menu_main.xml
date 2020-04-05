@@ -19,4 +19,8 @@
         app:showAsAction="always"
         />
 
+    <item
+        android:id="@+id/night_mode"
+        android:title="@string/night_mode"/>
+
 </menu>

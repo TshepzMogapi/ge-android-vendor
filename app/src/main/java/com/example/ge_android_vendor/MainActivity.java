@@ -3,6 +3,7 @@ package com.example.ge_android_vendor;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.DialogInterface;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private int mCount = 0;
     private TextView mShowCount;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +39,13 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        int nightMode = AppCompatDelegate.getDefaultNightMode();
+        if(nightMode == AppCompatDelegate.MODE_NIGHT_YES){
+            menu.findItem(R.id.night_mode).setTitle(R.string.day_mode);
+        } else{
+            menu.findItem(R.id.night_mode).setTitle(R.string.night_mode);
+        }
         return true;
     }
 
@@ -55,11 +64,31 @@ public class MainActivity extends AppCompatActivity {
                 displayToast("Sign Out clicked");
                 return true;
 
+            case R.id.night_mode:
+
+                int nightMode = AppCompatDelegate.getDefaultNightMode();
+
+                if (nightMode == AppCompatDelegate.MODE_NIGHT_YES){
+
+                    AppCompatDelegate.setDefaultNightMode(
+                            AppCompatDelegate.MODE_NIGHT_NO
+                    );
+
+
+                } else{
+
+                    AppCompatDelegate.setDefaultNightMode
+                            (AppCompatDelegate.MODE_NIGHT_YES);
+                }
+                return true;
+
             default:
 //                do nothing
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 
     public void displayToast(String message) {
         Toast.makeText(getApplicationContext(), message,

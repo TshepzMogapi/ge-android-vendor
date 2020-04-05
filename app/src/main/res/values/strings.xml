@@ -1,4 +1,8 @@
 <resources>
+
+    <string name="night_mode">Night Mode</string>
+    <string name="day_mode">Day Mode</string>
+
     <string name="app_name">GE Vendor</string>
     <string name="add_item_button">Add Item</string>
     <string name="count_text_view">0</string>
