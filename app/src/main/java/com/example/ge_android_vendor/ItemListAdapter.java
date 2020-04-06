@@ -4,10 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -21,6 +24,7 @@ public class ItemListAdapter extends
 //    private final LinkedList<String> mItemList;
 
     private ArrayList<Item> mItemsData;
+    private ImageView mItemsImage;
     private Context mContext;
 
 //    public ItemListAdapter(Context context,
@@ -86,6 +90,7 @@ public class ItemListAdapter extends
 
             mTitleText = itemView.findViewById(R.id.vh_item_title);
             mDescriptionText = itemView.findViewById(R.id.vh_item_description);
+            mItemsImage = itemView.findViewById(R.id.itemsImage);
 
 //            ItemView.setOnClickListener(this);
         }
@@ -94,6 +99,7 @@ public class ItemListAdapter extends
         void bindTo(Item currentItem) {
             mTitleText.setText(currentItem.getTitle());
             mDescriptionText.setText(currentItem.getDescription());
+            Glide.with(mContext).load(currentItem.getImageResource()).into(mItemsImage);
         }
 
         @Override

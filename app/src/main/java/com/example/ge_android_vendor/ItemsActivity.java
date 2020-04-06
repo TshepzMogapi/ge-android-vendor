@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -51,14 +52,20 @@ public class ItemsActivity extends AppCompatActivity {
     private void initializeData() {
 
         String[] itemsList = getResources()
-                .getStringArray(R.array.item_titles);
+                .getStringArray(R.array.items_titles);
 
         String[] itemsDescriptions = getResources()
-                .getStringArray(R.array.item_descriptions);
+                .getStringArray(R.array.items_descriptions);
+
+        TypedArray itemsImageResources =
+                getResources().obtainTypedArray(R.array.items_images);
 
         for (int i = 0; i < itemsList.length; i++) {
-            mItemsData.add(new Item(itemsList[i], itemsDescriptions[i]));
+            mItemsData.add(new Item(itemsList[i], itemsDescriptions[i],
+                    itemsImageResources.getResourceId(i,0)));
         }
+
+        itemsImageResources.recycle();
 
         mItemListAdapter.notifyDataSetChanged();
 
