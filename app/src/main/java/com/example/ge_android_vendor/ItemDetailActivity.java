@@ -21,8 +21,10 @@ public class ItemDetailActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_detail);
 
+//        change
+        TextView itemTitle = findViewById(R.id.tv_item_name);
 
-
+        itemTitle.setText(getIntent().getStringExtra("title"));
 
         Spinner spinner =  findViewById(R.id.spn_extra_item_option);
         if (spinner != null) {

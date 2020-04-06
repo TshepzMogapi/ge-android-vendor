@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".ItemDetailActivity">
 
+<!--    <TextView-->
+<!--        android:theme="@style/ThemeOverlay.AppCompat.Dark"-->
+<!--        android:id="@+id/vh_item_title"-->
+<!--        style="@style/item_title" />-->
+
 
     <TextView
         android:id="@+id/tv_item_name"

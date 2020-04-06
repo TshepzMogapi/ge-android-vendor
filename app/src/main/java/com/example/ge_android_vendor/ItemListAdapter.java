@@ -1,6 +1,7 @@
 package com.example.ge_android_vendor;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -92,7 +93,7 @@ public class ItemListAdapter extends
             mDescriptionText = itemView.findViewById(R.id.vh_item_description);
             mItemsImage = itemView.findViewById(R.id.itemsImage);
 
-//            ItemView.setOnClickListener(this);
+            itemView.setOnClickListener(this);
         }
 
 
@@ -105,6 +106,15 @@ public class ItemListAdapter extends
         @Override
         public void onClick(View v) {
 
+            Item currentItem = mItemsData.get(getAdapterPosition());
+
+            Intent detailIntent = new Intent(mContext, ItemDetailActivity.class);
+
+            detailIntent.putExtra("title", currentItem.getTitle() );
+            detailIntent.putExtra("image_resource",
+                    currentItem.getImageResource());
+
+            mContext.startActivity(detailIntent);
 //
 //            int mPosition = getLayoutPosition();
 //

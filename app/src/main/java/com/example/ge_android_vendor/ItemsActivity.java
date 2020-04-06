@@ -1,6 +1,8 @@
 package com.example.ge_android_vendor;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -47,6 +49,28 @@ public class ItemsActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mItemListAdapter);
 
         initializeData();
+
+        ItemTouchHelper touchHelper = new ItemTouchHelper(
+                new ItemTouchHelper.SimpleCallback(0,
+                        ItemTouchHelper.LEFT
+                | ItemTouchHelper.RIGHT) {
+                    @Override
+                    public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                        return false;
+                    }
+
+                    @Override
+                    public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+
+                        mItemsData.remove(viewHolder.getAdapterPosition());
+
+                        mItemListAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
+
+                    }
+                });
+
+        touchHelper.attachToRecyclerView(mRecyclerView);
+
     }
 
     private void initializeData() {
